@@ -4,49 +4,76 @@ import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 
 const reviews = [
   {
-    name: "Sarah Chen",
-    role: "CTO, Luminary Health",
-    avatar:
-      "https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop",
-    rating: 5,
-    text: "Bloomexbyte rebuilt our entire patient data platform in 10 weeks. The code quality, HIPAA compliance, and team communication were all exceptional. They didn't just build what we asked — they challenged our assumptions and delivered something far better.",
-    tag: "Healthcare",
-  },
-  {
-    name: "Marcus Williams",
-    role: "Founder, TradeFlow",
+    name: "Jack Thompson",
+    role: "Client, E-commerce",
     avatar:
       "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop",
     rating: 5,
-    text: "We brought Bloomexbyte in for a 3-month engagement and they fundamentally changed how we think about our tech stack. The AI automation workflows alone saved us 40+ hours per week. These aren't just developers — they're strategic partners.",
-    tag: "FinTech",
-  },
-  {
-    name: "Elena Petrova",
-    role: "VP Product, Axiom Labs",
-    avatar:
-      "https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop",
-    rating: 5,
-    text: "After two failed agencies, I was skeptical. Bloomexbyte proved every doubt wrong. Deadlines were hit every single sprint, the design was exceptional, and the code is the cleanest I've reviewed in years. We're on our third project with them.",
-    tag: "SaaS",
-  },
-  {
-    name: "James Okafor",
-    role: "CEO, Orbit Commerce",
-    avatar:
-      "https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop",
-    rating: 5,
-    text: "Our e-commerce platform needed to handle 50k concurrent users during Black Friday. Bloomexbyte delivered a cloud architecture that handled 3x that load without breaking a sweat. The monitoring and alerting setup has been invaluable.",
+    text: "We had a truly great experience working with Bloomexbyte on our new project. They built a highly stable e-commerce store that never slows down when traffic spikes, and the beautifully intuitive design has noticeably improved our daily checkout completion rates.",
     tag: "E-Commerce",
   },
   {
-    name: "Priya Sharma",
-    role: "Head of Engineering, Nexus AI",
+    name: "Sarah Lin",
+    role: "Client, Enterprise Software Solutions",
+    avatar:
+      "https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop",
+    rating: 5,
+    text: "We were under a lot of pressure to launch fast. They took the challenge head-on and worked around the clock to get everything done ahead of schedule. To our surprise, they even optimized our database as a bonus without charging extra and added a custom reporting dashboard we didn't even know we needed.",
+    tag: "Enterprise",
+  },
+  {
+    name: "Priya Desai",
+    role: "Client, Finance",
     avatar:
       "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop",
     rating: 5,
-    text: "The AI pipeline Bloomexbyte built processes over 2 million documents daily with 99.7% accuracy. What would have taken our internal team 18 months was delivered in under 5 months. Extraordinary execution.",
-    tag: "AI/ML",
+    text: "We wanted a clean finance website, and they really delivered. The custom SIP and lumpsum calculators they built work flawlessly with the interactive charts. Plus, the new blog setup is exactly what we needed to share market updates. Highly recommend this team!",
+    tag: "Finance",
+  },
+  {
+    name: "Jessica Miller",
+    role: "Client, Tenant Management App",
+    avatar:
+      "https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop",
+    rating: 5,
+    text: "They built our property app from the ground up, and the new rent collection process is a total game-changer. They added a seamless WhatsApp API integration that automatically sends a text to tenants when rent is due, so we never have to chase anyone down anymore.",
+    tag: "Property",
+  },
+  {
+    name: "Ryan Gallagher",
+    role: "Client, Travel & Tours",
+    avatar:
+      "https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop",
+    rating: 5,
+    text: "They set up our travel portal from the ground up and honestly, its been a game-changer. It easily handles thousands of daily searches for our tour packages, and our users keep saying how smooth the booking checkout is. They absolutely nailed it.",
+    tag: "Travel",
+  },
+  {
+    name: "Dr. Alan Peterson",
+    role: "Client, Healthcare",
+    avatar:
+      "https://images.pexels.com/photos/5327580/pexels-photo-5327580.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop",
+    rating: 5,
+    text: "We partnered with their team to create a custom appointment system for our medical center. They coded a fantastic, secure platform that lets patients find open slots instantly. It has drastically cut down our daily phone volume, and the final product exceeded our expectations.",
+    tag: "Healthcare",
+  },
+  {
+    name: "Ethan Walker",
+    role: "Client, Hotel Booking",
+    avatar:
+      "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop",
+    rating: 5,
+    text: "We needed a custom booking site for our new resorts, and they built it completely from scratch. It handles heavy traffic without freezing up, and the mobile checkout they designed is super easy for our guests to use.",
+    tag: "Hotel",
+  },
+  {
+    name: "Mia Svensson",
+    role: "Client, Massage Booking Portal",
+    avatar:
+      "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop",
+    rating: 5,
+    text: "They developed a custom web app for our day spa, and the result is fantastic. Guests can easily secure their preferred massage treatments on their phones, and the automated text confirmations have practically eliminated our no-shows. Truly a great investment for our business.",
+    tag: "Wellness",
   },
 ];
 
@@ -104,6 +131,7 @@ export default function Reviews() {
                     setCurrent(i);
                   }}
                   className="h-1.5 rounded-full transition-all duration-300"
+                  aria-label={`Show review ${i + 1}`}
                   style={{
                     width: i === current ? 24 : 6,
                     background:

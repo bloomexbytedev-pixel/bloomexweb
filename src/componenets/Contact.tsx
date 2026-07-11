@@ -6,17 +6,16 @@ import {
   AlertCircle,
   Mail,
   MapPin,
-  Phone,
 } from "lucide-react";
 import { supabase } from "../lib/supabase";
 
 const services = [
   "Web Development",
   "Mobile Apps",
-  "Cloud Solutions",
-  "AI Automation",
+  "SEO Optimization",
+  "AI Automation & Chatbots",
   "Cybersecurity",
-  "Product Design",
+  "UI/UX",
   "Other",
 ];
 
@@ -147,11 +146,10 @@ export default function Contact() {
                     label: "Email Us",
                     value: "info@bloomexbyte.com",
                   },
-                  { icon: Phone, label: "Call Us", value: "+1 (555) 000-0000" },
                   {
                     icon: MapPin,
                     label: "Offices",
-                    value: "NYC · London · Singapore",
+                    value: "India",
                   },
                 ].map(({ icon: Icon, label, value }) => (
                   <div key={label} className="flex items-center gap-3">

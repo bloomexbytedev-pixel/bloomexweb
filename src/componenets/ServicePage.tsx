@@ -4,7 +4,6 @@ import { motion, useInView } from "framer-motion";
 import {
   Globe,
   Smartphone,
-  Cloud,
   Bot,
   Shield,
   Layers,
@@ -15,7 +14,6 @@ import {
   ChevronRight,
   Code2,
   Database,
-  Lock,
   Cpu,
   Palette,
   Server,
@@ -26,9 +24,6 @@ import {
   Play,
   Wifi,
   Bell,
-  Scale,
-  GitBranch,
-  Activity,
   Eye,
   AlertTriangle,
   Figma,
@@ -48,11 +43,8 @@ import {
   LineChart,
   Target,
   Repeat,
-  HardDrive,
   Layers2,
   Gauge,
-  UploadCloud,
-  Terminal,
 } from "lucide-react";
 
 export type ServiceSlug =
@@ -92,8 +84,8 @@ const serviceData: Record<
     subtitle: "That Drives Results",
     heroDescription:
       "We build fast, secure, responsive and scalable websites that deliver exceptional user experiences and help your business grow online. From landing pages to complex SaaS platforms.",
-    accent: "#3b82f6",
-    accentLight: "#93c5fd",
+    accent: "#38bdf8",
+    accentLight: "#7dd3fc",
     highlights: [
       { icon: CheckCircle, label: "Secure & Reliable" },
       { icon: Zap, label: "High Performance" },
@@ -195,8 +187,8 @@ const serviceData: Record<
     subtitle: "For Every Device",
     heroDescription:
       "Native and cross-platform mobile experiences on iOS and Android. We craft apps that feel at home on every device — fluid animations, intuitive UX, and rock-solid performance.",
-    accent: "#60a5fa",
-    accentLight: "#bfdbfe",
+    accent: "#22d3ee",
+    accentLight: "#67e8f9",
     highlights: [
       { icon: Smartphone, label: "iOS & Android" },
       { icon: Zap, label: "Native Performance" },
@@ -308,117 +300,117 @@ const serviceData: Record<
   },
   "cloud-solutions": {
     slug: "cloud-solutions",
-    icon: Cloud,
-    title: "Cloud Solutions",
-    subtitle: "Scale Without Limits",
+    icon: Search,
+    title: "SEO Optimization",
+    subtitle: "Rank. Reach. Convert.",
     heroDescription:
-      "Scalable, resilient cloud architecture on AWS, GCP and Azure. Infrastructure as code, zero-downtime deployments, auto-scaling and observability — built for the demands of modern business.",
-    accent: "#e2e8f0",
-    accentLight: "#f8fafc",
+      "Technical SEO, on-page optimization, content planning and performance improvements that make your website easier to find, faster to use and stronger at converting traffic.",
+    accent: "#34d399",
+    accentLight: "#6ee7b7",
     highlights: [
-      { icon: UploadCloud, label: "Multi-Cloud Ready" },
-      { icon: Scale, label: "Auto-Scaling" },
-      { icon: Lock, label: "Enterprise Security" },
-      { icon: Activity, label: "99.99% Uptime" },
+      { icon: Search, label: "Technical SEO" },
+      { icon: LineChart, label: "Ranking Growth" },
+      { icon: Gauge, label: "Core Web Vitals" },
+      { icon: Target, label: "Conversion Focused" },
     ],
     features: [
       {
-        icon: Server,
-        title: "Cloud Architecture Design",
+        icon: Search,
+        title: "Technical SEO Audit",
         description:
-          "We design resilient, cost-efficient cloud architectures tailored to your workloads and growth trajectory.",
-        example: "Multi-region architecture for a global SaaS company.",
+          "We identify crawl, indexing, speed, schema and architecture issues that hold your site back in search.",
+        example: "Audit roadmap that fixed 120+ indexability issues.",
       },
       {
-        icon: Terminal,
-        title: "Infrastructure as Code",
+        icon: FileCode,
+        title: "On-Page Optimization",
         description:
-          "Fully automated infrastructure with Terraform, Pulumi and CDK — repeatable, auditable and version-controlled.",
-        example: "Zero-touch environment provisioning in under 10 minutes.",
-      },
-      {
-        icon: GitBranch,
-        title: "CI/CD Pipelines",
-        description:
-          "Automated build, test and deployment pipelines that enable multiple daily releases with zero downtime.",
-        example: "50 deploys per day for an enterprise e-commerce platform.",
+          "Titles, meta descriptions, headings, internal links and page structure refined for search intent and readability.",
+        example: "Service pages rebuilt around high-intent keywords.",
       },
       {
         icon: Gauge,
-        title: "Performance & Optimization",
+        title: "Performance SEO",
         description:
-          "Continuous profiling, right-sizing and cost optimization to get the best performance per dollar spent.",
-        example: "35% cloud cost reduction for a Series B startup.",
+          "Core Web Vitals, mobile speed and technical performance improvements that support rankings and user experience.",
+        example: "LCP reduced from 4.8s to under 2s.",
       },
       {
-        icon: Activity,
-        title: "Monitoring & Observability",
+        icon: Layout,
+        title: "Content Strategy",
         description:
-          "End-to-end observability with metrics, logs and traces so you know exactly what's happening at all times.",
-        example: "Full observability stack with sub-second alerting.",
+          "Search-driven content plans for landing pages, blogs and topic clusters that build authority over time.",
+        example: "90-day content plan for a local service business.",
       },
       {
-        icon: HardDrive,
-        title: "Disaster Recovery",
+        icon: Eye,
+        title: "Analytics & Tracking",
         description:
-          "Automated backups, failover strategies and recovery playbooks to protect your business from the unexpected.",
-        example: "RTO < 15 minutes for a financial services client.",
+          "Search Console, GA4 and conversion tracking configured so improvements are measured clearly.",
+        example: "Dashboard showing keyword, traffic and lead growth.",
+      },
+      {
+        icon: Target,
+        title: "Local SEO",
+        description:
+          "Google Business Profile, location pages and local signals optimized for area-based searches.",
+        example: "Local pages built for city-level service visibility.",
       },
     ],
     technologies: [
-      { name: "AWS", category: "Cloud" },
-      { name: "GCP", category: "Cloud" },
-      { name: "Azure", category: "Cloud" },
-      { name: "Terraform", category: "IaC" },
-      { name: "Kubernetes", category: "Orchestration" },
-      { name: "Docker", category: "Containers" },
-      { name: "Datadog", category: "Observability" },
-      { name: "Grafana", category: "Observability" },
+      { name: "Google Search Console", category: "SEO" },
+      { name: "GA4", category: "Analytics" },
+      { name: "Ahrefs", category: "Research" },
+      { name: "SEMrush", category: "Research" },
+      { name: "Screaming Frog", category: "Audit" },
+      { name: "PageSpeed Insights", category: "Performance" },
+      { name: "Schema.org", category: "Structured Data" },
+      { name: "Looker Studio", category: "Reporting" },
     ],
     stats: [
-      { value: "60+", label: "Cloud Projects" },
-      { value: "35%", label: "Avg Cost Savings" },
-      { value: "99.99%", label: "Uptime Achieved" },
-      { value: "< 15min", label: "Recovery Time" },
+      { value: "120+", label: "SEO Audits" },
+      { value: "2x", label: "Traffic Potential" },
+      { value: "90d", label: "Growth Roadmap" },
+      { value: "100%", label: "Tracked Results" },
     ],
     process: [
       {
         step: "01",
-        title: "Cloud Assessment",
+        title: "SEO Audit",
         description:
-          "We audit your current infrastructure, workloads and costs to find the optimal cloud strategy.",
+          "We review technical health, content gaps, competitors and search demand.",
       },
       {
         step: "02",
-        title: "Architecture Design",
+        title: "Keyword Strategy",
         description:
-          "A detailed blueprint covering compute, networking, storage, security and disaster recovery.",
+          "We map high-intent keywords to pages, content and conversion paths.",
       },
       {
         step: "03",
-        title: "Migration & Build",
+        title: "Optimization",
         description:
-          "Phased migration or greenfield build with infrastructure as code from day one.",
+          "We implement on-page, technical, schema and speed improvements.",
       },
       {
         step: "04",
-        title: "Operations & Optimise",
+        title: "Report & Improve",
         description:
-          "Ongoing monitoring, patching, cost reviews and architectural improvements as you scale.",
+          "We track rankings, traffic and leads, then refine the next growth cycle.",
       },
     ],
   },
   "ai-automation": {
     slug: "ai-automation",
     icon: Bot,
-    title: "AI Automation",
+    title: "AI Automation & Chatbots",
     subtitle: "Work Smarter, Not Harder",
     heroDescription:
-      "LLM-powered workflows, intelligent agents and ML pipelines that eliminate repetitive tasks, surface actionable insights and give your team superpowers. Built for the AI-first era.",
-    accent: "#3b82f6",
-    accentLight: "#93c5fd",
+      "LLM-powered workflows, intelligent agents, custom chatbots and ML pipelines that eliminate repetitive tasks, support customers 24/7 and surface actionable insights.",
+    accent: "#a78bfa",
+    accentLight: "#c4b5fd",
     highlights: [
-      { icon: BrainCircuit, label: "LLM Integration" },
+      { icon: MessageSquare, label: "AI Chatbots" },
       { icon: Workflow, label: "Automated Workflows" },
       { icon: LineChart, label: "Predictive Insights" },
       { icon: Repeat, label: "Always On" },
@@ -518,8 +510,8 @@ const serviceData: Record<
     subtitle: "Defence That Never Sleeps",
     heroDescription:
       "Proactive security audits, penetration testing and hardened infrastructure to protect your most valuable digital assets. We find the vulnerabilities before the attackers do.",
-    accent: "#60a5fa",
-    accentLight: "#bfdbfe",
+    accent: "#f59e0b",
+    accentLight: "#fbbf24",
     highlights: [
       { icon: ShieldCheck, label: "Penetration Testing" },
       { icon: Eye, label: "24/7 Monitoring" },
@@ -616,12 +608,12 @@ const serviceData: Record<
   "product-design": {
     slug: "product-design",
     icon: Layers,
-    title: "Product Design",
-    subtitle: "Beautiful. Purposeful. Scalable.",
+    title: "UI/UX",
+    subtitle: "Simple. Smooth. Useful.",
     heroDescription:
-      "End-to-end product design — user research, wireframing, prototyping and design systems built for handoff and consistency. Interfaces that users love and developers can actually build.",
-    accent: "#e2e8f0",
-    accentLight: "#f8fafc",
+      "User interface and experience design for websites, mobile apps and dashboards. We shape clear flows, polished screens and design systems that make products easier to use.",
+    accent: "#f472b6",
+    accentLight: "#f9a8d4",
     highlights: [
       { icon: Users, label: "User Research" },
       { icon: Layout, label: "Design Systems" },
@@ -631,7 +623,7 @@ const serviceData: Record<
     features: [
       {
         icon: Users,
-        title: "User Research & Strategy",
+        title: "UX Research & Strategy",
         description:
           "Interviews, usability tests, competitor analysis and persona development to ground every design decision in evidence.",
         example: "Research sprint that reshaped a B2B product's IA entirely.",
@@ -645,7 +637,7 @@ const serviceData: Record<
       },
       {
         icon: Figma,
-        title: "High-Fidelity UI Design",
+        title: "UI Design",
         description:
           "Polished, pixel-perfect screens in Figma with thorough component libraries, variants and interaction annotations.",
         example: "Full UI for a mobile fintech app in 3 weeks.",
@@ -666,10 +658,10 @@ const serviceData: Record<
       },
       {
         icon: Palette,
-        title: "Brand & Visual Identity",
+        title: "Visual Polish",
         description:
-          "Logos, colour palettes, typography and brand guidelines that give your product a distinctive, memorable identity.",
-        example: "Full rebrand that increased brand recall by 60%.",
+          "Colour, typography, spacing and component styling refined so the interface feels clean, consistent and credible.",
+        example: "Dashboard UI refresh that made key workflows easier to scan.",
       },
     ],
     technologies: [
@@ -683,8 +675,8 @@ const serviceData: Record<
       { name: "Hotjar", category: "Analytics" },
     ],
     stats: [
-      { value: "200+", label: "Products Designed" },
-      { value: "4.9★", label: "Client Satisfaction" },
+      { value: "200+", label: "UI Screens Designed" },
+      { value: "4.9/5", label: "Client Satisfaction" },
       { value: "60%", label: "Avg Task Success Lift" },
       { value: "2 wks", label: "Sprint Turnaround" },
     ],

@@ -4,7 +4,7 @@ import { motion, useInView, AnimatePresence } from "framer-motion";
 import {
   Globe,
   Smartphone,
-  Cloud,
+  Search,
   Bot,
   Shield,
   Layers,
@@ -28,8 +28,8 @@ const services: {
     description:
       "High-performance web applications built with modern frameworks — React, Next.js, and beyond. Pixel-perfect UIs that convert.",
     tags: ["React", "Next.js", "TypeScript"],
-    accent: "#3b82f6",
-    peekColor: "#3b82f6",
+    accent: "#38bdf8",
+    peekColor: "#7dd3fc",
   },
   {
     icon: Smartphone,
@@ -38,28 +38,28 @@ const services: {
     description:
       "Native and cross-platform mobile experiences on iOS and Android. React Native and Flutter apps that feel at home on every device.",
     tags: ["React Native", "Flutter", "Swift"],
-    accent: "#60a5fa",
-    peekColor: "#60a5fa",
+    accent: "#22d3ee",
+    peekColor: "#67e8f9",
   },
   {
-    icon: Cloud,
+    icon: Search,
     slug: "cloud-solutions",
-    title: "Cloud Solutions",
+    title: "SEO Optimization",
     description:
-      "Scalable, resilient cloud architecture on AWS, GCP, and Azure. Infrastructure as code, zero-downtime deployments, and auto-scaling.",
-    tags: ["AWS", "Terraform", "Kubernetes"],
-    accent: "#f0ede4",
-    peekColor: "#d6cfc0",
+      "Technical SEO, content strategy, on-page fixes, and performance improvements that help your business rank and convert.",
+    tags: ["Technical SEO", "On-Page", "Analytics"],
+    accent: "#34d399",
+    peekColor: "#6ee7b7",
   },
   {
     icon: Bot,
     slug: "ai-automation",
-    title: "AI Automation",
+    title: "AI Automation & Chatbots",
     description:
-      "LLM-powered workflows, intelligent agents, and ML pipelines that eliminate repetitive tasks and surface actionable insights.",
-    tags: ["GPT-4", "LangChain", "Python"],
-    accent: "#3b82f6",
-    peekColor: "#3b82f6",
+      "LLM-powered workflows, intelligent agents, and custom chatbots that automate support, sales, and internal operations.",
+    tags: ["Chatbots", "GPT-4", "Python"],
+    accent: "#a78bfa",
+    peekColor: "#c4b5fd",
   },
   {
     icon: Shield,
@@ -68,18 +68,18 @@ const services: {
     description:
       "Proactive security audits, penetration testing, and hardened infrastructure to protect your most valuable digital assets.",
     tags: ["Pen Testing", "SOC 2", "Zero Trust"],
-    accent: "#60a5fa",
-    peekColor: "#60a5fa",
+    accent: "#f59e0b",
+    peekColor: "#fbbf24",
   },
   {
     icon: Layers,
     slug: "product-design",
-    title: "Product Design",
+    title: "UI/UX",
     description:
-      "End-to-end product design: user research, wireframing, prototyping, and design systems built for handoff and consistency.",
-    tags: ["Figma", "Framer", "Design Systems"],
-    accent: "#f0ede4",
-    peekColor: "#d6cfc0",
+      "Clean interfaces, user flows, wireframes, prototypes, and design systems built for smooth product experiences.",
+    tags: ["Figma", "Prototypes", "Design Systems"],
+    accent: "#f472b6",
+    peekColor: "#f9a8d4",
   },
 ];
 
@@ -284,17 +284,33 @@ export default function Services() {
                 variants={cardVariants}
                 whileHover={{ y: -4 }}
                 transition={{ duration: 0.25 }}
+                className="h-full"
               >
                 <Link
                   to={`/services/${s.slug}`}
-                  className="block relative glass glass-hover rounded-2xl p-6 flex flex-col gap-4 cursor-pointer shadow-xl overflow-visible"
+                  className="group block relative glass rounded-2xl p-6 min-h-[18.5rem] h-full flex flex-col gap-4 cursor-pointer shadow-xl overflow-visible transition-all duration-300"
                   onMouseEnter={() => setHoveredIndex(i)}
                   onMouseLeave={() => setHoveredIndex(null)}
+                  style={{
+                    borderColor: hovered ? `${s.accent}70` : `${s.accent}3d`,
+                    boxShadow: hovered
+                      ? `0 0 42px ${s.accent}28`
+                      : `0 18px 45px rgba(0,0,0,0.22), 0 0 22px ${s.accent}12`,
+                    background: hovered
+                      ? `linear-gradient(135deg, rgba(240,237,228,0.065), ${s.accent}14)`
+                      : `linear-gradient(135deg, rgba(240,237,228,0.04), ${s.accent}0b)`,
+                  }}
                 >
                   <div
-                    className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                    className="absolute inset-x-4 top-0 h-px pointer-events-none"
                     style={{
-                      background: `radial-gradient(ellipse at top left, ${s.accent}10, transparent 70%)`,
+                      background: `linear-gradient(90deg, transparent, ${s.accent}80, transparent)`,
+                    }}
+                  />
+                  <div
+                    className="absolute inset-0 rounded-2xl opacity-60 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                    style={{
+                      background: `radial-gradient(ellipse at top left, ${s.accent}1a, transparent 72%)`,
                     }}
                   />
 
@@ -302,7 +318,11 @@ export default function Services() {
 
                   <div
                     className="relative w-11 h-11 rounded-xl flex items-center justify-center transition-all duration-300"
-                    style={{ background: `${s.accent}14`, color: s.accent }}
+                    style={{
+                      background: `${s.accent}1f`,
+                      border: `1px solid ${s.accent}24`,
+                      color: s.accent,
+                    }}
                   >
                     <Icon className="w-5 h-5" strokeWidth={1.8} />
                   </div>
@@ -321,7 +341,12 @@ export default function Services() {
                       {s.tags.map((t) => (
                         <span
                           key={t}
-                          className="px-2.5 py-1 rounded-md bg-[#f0ede4]/[0.04] border border-[#f0ede4]/[0.07] text-sand-600 text-xs font-mono"
+                          className="px-2.5 py-1 rounded-md text-xs font-mono"
+                          style={{
+                            border: `1px solid ${s.accent}${hovered ? "33" : "24"}`,
+                            color: hovered ? s.accent : `${s.accent}d9`,
+                            background: `${s.accent}${hovered ? "12" : "0d"}`,
+                          }}
                         >
                           {t}
                         </span>

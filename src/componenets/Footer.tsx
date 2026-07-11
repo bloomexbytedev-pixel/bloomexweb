@@ -86,8 +86,8 @@ const links = {
   Services: [
     "Web Development",
     "Mobile Apps",
-    "Cloud Solutions",
-    "AI Automation",
+    "SEO Optimization",
+    "AI Automation & Chatbots",
   ],
   Resources: ["Documentation", "Case Studies", "API Reference", "Status"],
   Legal: ["Privacy Policy", "Terms of Service", "Cookie Policy"],
