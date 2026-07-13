@@ -35,8 +35,8 @@ export default function Hero() {
         }}
       />
 
-      <div className="relative max-w-7xl mx-auto px-6 w-full pt-28 pb-16 grid lg:grid-cols-2 gap-12 items-center">
-        <div className="flex flex-col gap-6 lg:gap-8">
+      <div className="relative max-w-7xl mx-auto px-6 w-full pt-20 pb-10 md:pt-24 md:pb-12 lg:pt-28 lg:pb-16 grid lg:grid-cols-2 gap-12 items-center">
+        <div className="relative z-10 flex flex-col gap-6 lg:gap-8">
           <motion.div
             variants={fadeUp}
             initial="hidden"
@@ -126,7 +126,7 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-          className="relative flex items-center justify-center"
+          className="absolute inset-0 z-0 flex items-center justify-center opacity-25 sm:opacity-40 lg:static lg:z-auto lg:opacity-100"
         >
           <div className="absolute w-72 h-72 md:w-96 md:h-96 rounded-full bg-cyprus-800/20 blur-3xl animate-pulse-glow pointer-events-none" />
           <div className="absolute w-48 h-48 md:w-64 md:h-64 rounded-full bg-cyprus-700/10 blur-2xl pointer-events-none" />
@@ -138,7 +138,7 @@ export default function Hero() {
           <motion.div
             animate={{ y: [0, -8, 0] }}
             transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute -top-4 -right-4 glass border border-cyprus-800/40 rounded-xl px-3 py-2 text-xs text-[#93c5fd] font-mono shadow-lg"
+            className="absolute -top-4 -right-4 z-10 glass border border-cyprus-800/40 rounded-xl px-3 py-2 text-xs text-[#93c5fd] font-mono shadow-lg"
           >
             <span className="text-sand-600">// </span>Full-Stack Dev
           </motion.div>
@@ -151,7 +151,7 @@ export default function Hero() {
               ease: "easeInOut",
               delay: 0.5,
             }}
-            className="absolute -bottom-4 -left-4 glass border border-cyprus-800/40 rounded-xl px-3 py-2 text-xs text-[#93c5fd] font-mono shadow-lg"
+            className="absolute -bottom-4 -left-4 z-10 glass border border-cyprus-800/40 rounded-xl px-3 py-2 text-xs text-[#93c5fd] font-mono shadow-lg"
           >
             <span className="text-sand-600">{"{ "}</span>AI-Powered
             <span className="text-sand-600">{" }"}</span>

@@ -100,7 +100,7 @@ const cardVariants = {
 function PeekingBot({ color, hovered }: { color: string; hovered: boolean }) {
   return (
     <motion.div
-      className="absolute -bottom-1 -right-3 z-20 pointer-events-none select-none"
+      className="absolute -bottom-1 -right-3 z-0 opacity-30 sm:opacity-60 md:z-20 md:opacity-100 pointer-events-none select-none"
       initial={false}
       animate={hovered ? { y: -28, rotate: -8 } : { y: 14, rotate: 0 }}
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
@@ -247,7 +247,10 @@ export default function Services() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <section id="services" className="relative py-28 overflow-hidden">
+    <section
+      id="services"
+      className="relative pt-16 pb-24 md:pt-20 md:pb-28 overflow-hidden"
+    >
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_40%_at_50%_50%,rgba(59,130,246,0.08),transparent)]" />
 
       <div className="relative max-w-7xl mx-auto px-6" ref={ref}>
