@@ -1,4 +1,4 @@
-import { Github, Twitter, Linkedin } from "lucide-react";
+import { Github, Twitter, Linkedin, InstagramIcon } from "lucide-react";
 
 function BloomLogo({ className = "w-4 h-4" }: { className?: string }) {
   return (
@@ -82,14 +82,14 @@ function BloomLogo({ className = "w-4 h-4" }: { className?: string }) {
 }
 
 const links = {
-  Company: ["About", "Careers", "Blog", "Press"],
+  Company: ["About", "Careers", "Blog"],
   Services: [
     "Web Development",
     "Mobile Apps",
     "SEO Optimization",
     "AI Automation & Chatbots",
   ],
-  Resources: ["Documentation", "Case Studies", "API Reference", "Status"],
+  // Resources: ["Documentation", "Case Studies", "API Reference", "Status"],
   Legal: ["Privacy Policy", "Terms of Service", "Cookie Policy"],
 };
 
@@ -115,17 +115,32 @@ export default function Footer() {
             </p>
             <div className="flex items-center gap-3 mt-1">
               {[
-                { icon: Github, label: "GitHub" },
-                { icon: Twitter, label: "Twitter" },
-                { icon: Linkedin, label: "LinkedIn" },
-              ].map(({ icon: Icon, label }) => (
-                <button
+                {
+                  icon: Github,
+                  label: "GitHub",
+                  href: "https://github.com/bloomexbyte",
+                },
+                {
+                  icon: InstagramIcon,
+                  label: "Instagram",
+                  href: "https://www.instagram.com/bloomexbyte",
+                },
+                {
+                  icon: Linkedin,
+                  label: "LinkedIn",
+                  href: "https://linkedin.com/company/bloomexbyte",
+                },
+              ].map(({ icon: Icon, label, href }) => (
+                <a
                   key={label}
+                  href={href}
                   aria-label={label}
                   className="w-8 h-8 rounded-lg glass flex items-center justify-center text-sand-700 hover:text-sand-300 hover:bg-[#f0ede4]/[0.08] transition-all"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <Icon className="w-4 h-4" />
-                </button>
+                </a>
               ))}
             </div>
           </div>

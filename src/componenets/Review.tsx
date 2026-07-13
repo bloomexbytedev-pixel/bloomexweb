@@ -6,8 +6,6 @@ const reviews = [
   {
     name: "Jack Thompson",
     role: "Client, E-commerce",
-    avatar:
-      "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop",
     rating: 5,
     text: "We had a truly great experience working with Bloomexbyte on our new project. They built a highly stable e-commerce store that never slows down when traffic spikes, and the beautifully intuitive design has noticeably improved our daily checkout completion rates.",
     tag: "E-Commerce",
@@ -15,8 +13,6 @@ const reviews = [
   {
     name: "Sarah Lin",
     role: "Client, Enterprise Software Solutions",
-    avatar:
-      "https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop",
     rating: 5,
     text: "We were under a lot of pressure to launch fast. They took the challenge head-on and worked around the clock to get everything done ahead of schedule. To our surprise, they even optimized our database as a bonus without charging extra and added a custom reporting dashboard we didn't even know we needed.",
     tag: "Enterprise",
@@ -24,8 +20,6 @@ const reviews = [
   {
     name: "Priya Desai",
     role: "Client, Finance",
-    avatar:
-      "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop",
     rating: 5,
     text: "We wanted a clean finance website, and they really delivered. The custom SIP and lumpsum calculators they built work flawlessly with the interactive charts. Plus, the new blog setup is exactly what we needed to share market updates. Highly recommend this team!",
     tag: "Finance",
@@ -33,8 +27,6 @@ const reviews = [
   {
     name: "Jessica Miller",
     role: "Client, Tenant Management App",
-    avatar:
-      "https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop",
     rating: 5,
     text: "They built our property app from the ground up, and the new rent collection process is a total game-changer. They added a seamless WhatsApp API integration that automatically sends a text to tenants when rent is due, so we never have to chase anyone down anymore.",
     tag: "Property",
@@ -42,17 +34,13 @@ const reviews = [
   {
     name: "Ryan Gallagher",
     role: "Client, Travel & Tours",
-    avatar:
-      "https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop",
     rating: 5,
-    text: "They set up our travel portal from the ground up and honestly, its been a game-changer. It easily handles thousands of daily searches for our tour packages, and our users keep saying how smooth the booking checkout is. They absolutely nailed it.",
+    text: "They set up our travel portal from the ground up and honestly, it's been a game-changer. It easily handles thousands of daily searches for our tour packages, and our users keep saying how smooth the booking checkout is. They absolutely nailed it.",
     tag: "Travel",
   },
   {
     name: "Dr. Alan Peterson",
     role: "Client, Healthcare",
-    avatar:
-      "https://images.pexels.com/photos/5327580/pexels-photo-5327580.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop",
     rating: 5,
     text: "We partnered with their team to create a custom appointment system for our medical center. They coded a fantastic, secure platform that lets patients find open slots instantly. It has drastically cut down our daily phone volume, and the final product exceeded our expectations.",
     tag: "Healthcare",
@@ -60,8 +48,6 @@ const reviews = [
   {
     name: "Ethan Walker",
     role: "Client, Hotel Booking",
-    avatar:
-      "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop",
     rating: 5,
     text: "We needed a custom booking site for our new resorts, and they built it completely from scratch. It handles heavy traffic without freezing up, and the mobile checkout they designed is super easy for our guests to use.",
     tag: "Hotel",
@@ -69,13 +55,19 @@ const reviews = [
   {
     name: "Mia Svensson",
     role: "Client, Massage Booking Portal",
-    avatar:
-      "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop",
     rating: 5,
     text: "They developed a custom web app for our day spa, and the result is fantastic. Guests can easily secure their preferred massage treatments on their phones, and the automated text confirmations have practically eliminated our no-shows. Truly a great investment for our business.",
     tag: "Wellness",
   },
 ];
+
+const getInitials = (name: string) =>
+  name
+    .split(" ")
+    .map((part) => part[0])
+    .slice(0, 2)
+    .join("")
+    .toUpperCase();
 
 export default function Reviews() {
   const ref = useRef<HTMLDivElement>(null);
@@ -174,12 +166,9 @@ export default function Reviews() {
                   &ldquo;{review.text}&rdquo;
                 </p>
                 <div className="flex items-center gap-3 pt-2 border-t border-[#f0ede4]/[0.06]">
-                  <img
-                    src={review.avatar}
-                    alt={review.name}
-                    className="w-10 h-10 rounded-full object-cover ring-2 ring-cyprus-700/40"
-                    loading="lazy"
-                  />
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#111827]/[0.64] text-sm font-semibold text-sand-100 ring-1 ring-white/10">
+                    {getInitials(review.name)}
+                  </div>
                   <div className="flex-1 min-w-0">
                     <div className="text-sand-300 font-semibold text-sm">
                       {review.name}
