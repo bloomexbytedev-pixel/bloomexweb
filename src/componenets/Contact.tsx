@@ -1,7 +1,6 @@
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { Send, CheckCircle, AlertCircle, Mail, MapPin } from "lucide-react";
-import { supabase } from "../lib/supabase";
 
 const services = [
   "Web Development",
@@ -58,20 +57,6 @@ export default function Contact() {
     setErrorMsg("");
 
     try {
-      // Save to database
-      const { error: dbError } = await supabase
-        .from("contact_submissions")
-        .insert([
-          {
-            name: form.name,
-            email: form.email,
-            phone: form.phone,
-            service: form.service,
-            message: form.message,
-          },
-        ]);
-      if (dbError) throw dbError;
-
       // Send email notification
       const res = await fetch(
         "https://bloomexmail.onrender.com/api/v1/notifications/email/inquiry",
