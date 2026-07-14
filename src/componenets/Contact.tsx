@@ -65,6 +65,7 @@ export default function Contact() {
           {
             name: form.name,
             email: form.email,
+            phone: form.phone,
             service: form.service,
             message: form.message,
           },
