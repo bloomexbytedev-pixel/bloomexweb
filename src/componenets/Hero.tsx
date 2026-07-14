@@ -138,7 +138,7 @@ export default function Hero() {
           <motion.div
             animate={{ y: [0, -8, 0] }}
             transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute -top-4 -right-4 z-10 glass border border-cyprus-800/40 rounded-xl px-3 py-2 text-xs text-[#93c5fd] font-mono shadow-lg"
+            className="absolute top-20 right-4 sm:right-8 md:right-12 z-10 glass border border-cyprus-800/40 rounded-xl px-3 py-2 text-xs text-[#93c5fd] font-mono shadow-lg"
           >
             <span className="text-sand-600">// </span>Full-Stack Dev
           </motion.div>
@@ -151,7 +151,7 @@ export default function Hero() {
               ease: "easeInOut",
               delay: 0.5,
             }}
-            className="absolute -bottom-4 -left-4 z-10 glass border border-cyprus-800/40 rounded-xl px-3 py-2 text-xs text-[#93c5fd] font-mono shadow-lg"
+            className="absolute bottom-6 left-80 sm:left-4 md:left-6 z-10 glass border border-cyprus-800/40 rounded-xl px-3 py-2 text-xs text-[#93c5fd] font-mono shadow-lg"
           >
             <span className="text-sand-600">{"{ "}</span>AI-Powered
             <span className="text-sand-600">{" }"}</span>
@@ -164,7 +164,7 @@ export default function Hero() {
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2 }}
         onClick={scrollToServices}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-sand-700 hover:text-sand-500 transition-colors"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-1 text-sand-700 hover:text-sand-500 transition-colors"
       >
         <span className="text-xs font-mono tracking-widest uppercase">
           Scroll
