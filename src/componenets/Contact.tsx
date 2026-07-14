@@ -1,12 +1,6 @@
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import {
-  Send,
-  CheckCircle,
-  AlertCircle,
-  Mail,
-  MapPin,
-} from "lucide-react";
+import { Send, CheckCircle, AlertCircle, Mail, MapPin } from "lucide-react";
 import { supabase } from "../lib/supabase";
 
 const services = [
@@ -23,6 +17,7 @@ type Status = "idle" | "loading" | "success" | "error";
 interface FormState {
   name: string;
   email: string;
+  phone: string;
   service: string;
   message: string;
 }
@@ -33,6 +28,7 @@ export default function Contact() {
   const [form, setForm] = useState<FormState>({
     name: "",
     email: "",
+    phone: "",
     service: "",
     message: "",
   });
@@ -50,7 +46,14 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!form.name || !form.email || !form.service || !form.message) return;
+    if (
+      !form.name ||
+      !form.email ||
+      !form.phone ||
+      !form.service ||
+      !form.message
+    )
+      return;
     setStatus("loading");
     setErrorMsg("");
 
@@ -58,37 +61,44 @@ export default function Contact() {
       // Save to database
       const { error: dbError } = await supabase
         .from("contact_submissions")
-        .insert([form]);
+        .insert([
+          {
+            name: form.name,
+            email: form.email,
+            service: form.service,
+            message: form.message,
+          },
+        ]);
       if (dbError) throw dbError;
 
       // Send email notification
-      const {
-        data: { supabaseUrl, anonKey },
-      } = {
-        data: {
-          supabaseUrl: import.meta.env.VITE_SUPABASE_URL,
-          anonKey: import.meta.env.VITE_SUPABASE_ANON_KEY,
-        },
-      };
       const res = await fetch(
-        `${supabaseUrl}/functions/v1/send-contact-email`,
+        "https://bloomexmail.onrender.com/api/v1/notifications/email/inquiry",
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${anonKey}`,
           },
-          body: JSON.stringify(form),
+          body: JSON.stringify({
+            name: form.name,
+            email: form.email,
+            phone: form.phone,
+            subject: form.service,
+            message: form.message,
+          }),
         },
       );
 
       if (!res.ok) {
-        const err = await res.json();
-        console.warn("Email notification failed:", err?.error);
+        const err = await res.json().catch(() => null);
+        console.warn(
+          "Email notification failed:",
+          err?.error || res.statusText,
+        );
       }
 
       setStatus("success");
-      setForm({ name: "", email: "", service: "", message: "" });
+      setForm({ name: "", email: "", phone: "", service: "", message: "" });
     } catch {
       setStatus("error");
       setErrorMsg("Something went wrong. Please try again.");
@@ -253,6 +263,19 @@ export default function Contact() {
                         className={inputClass}
                       />
                     </div>
+                  </div>
+                  <div className="flex flex-col gap-1.5">
+                    <label className="text-xs text-sand-600 font-medium">
+                      Phone Number
+                    </label>
+                    <input
+                      type="tel"
+                      value={form.phone}
+                      onChange={set("phone")}
+                      placeholder="9876543210"
+                      required
+                      className={inputClass}
+                    />
                   </div>
                   <div className="flex flex-col gap-1.5">
                     <label className="text-xs text-sand-600 font-medium">
