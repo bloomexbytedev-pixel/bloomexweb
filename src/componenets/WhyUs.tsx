@@ -85,7 +85,7 @@ export default function WhyUs() {
             </p>
             <div className="grid grid-cols-3 gap-4">
               {[
-                { val: "150+", label: "Projects Shipped" },
+                { val: "50+", label: "Projects Shipped" },
                 { val: "4.9★", label: "Average Rating" },
                 { val: "0", label: "Missed Deadlines" },
               ].map(({ val, label }) => (

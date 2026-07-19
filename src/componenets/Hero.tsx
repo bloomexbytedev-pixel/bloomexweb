@@ -109,12 +109,14 @@ export default function Hero() {
             className="flex items-center gap-6 pt-2"
           >
             {[
-              ["150+", "Projects Shipped"],
+              ["50+", "Projects Shipped"],
               ["98%", "Client Retention"],
-              ["12+", "Years of Experience"],
+              ["2+", "Years of Experience"],
             ].map(([val, label]) => (
               <div key={label} className="flex flex-col">
-                <span className="text-2xl font-bold text-sand-200">{val}</span>
+                <div className="text-2xl font-bold text-sand-200 flex items-center justify-center">
+                  {val}
+                </div>
                 <span className="text-xs text-sand-600">{label}</span>
               </div>
             ))}

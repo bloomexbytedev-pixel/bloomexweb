@@ -148,7 +148,7 @@ const serviceData: Record<
       { name: "Vercel", category: "Hosting" },
     ],
     stats: [
-      { value: "150+", label: "Websites Delivered" },
+      { value: "50+", label: "Websites Delivered" },
       { value: "99.9%", label: "Uptime Guaranteed" },
       { value: "< 2s", label: "Avg Load Time" },
       { value: "100%", label: "Mobile Optimized" },

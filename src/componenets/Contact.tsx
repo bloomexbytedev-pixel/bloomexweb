@@ -244,7 +244,7 @@ export default function Contact() {
                         type="email"
                         value={form.email}
                         onChange={set("email")}
-                        placeholder="alex@company.com"
+                        placeholder="alex@mail.com"
                         required
                         className={inputClass}
                       />
